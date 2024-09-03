@@ -1,36 +1,36 @@
-import { Position } from "../interfaces/position";
-import { BaseShape } from "../shapes/BaseShape";
+import { Position } from '../interfaces/position'
+import { BaseShape } from '../shapes/BaseShape'
 
 export class BaseElement {
-  public angle;
-  public initialPosition: Position;
-  public currentPosition: Position;
+  public angle: number
+  public initialPosition: Position
+  public currentPosition: Position
 
   constructor(public shape: BaseShape) {
-    this.initialize();
+    this.initialize()
   }
 
   protected initialize() {
     const initialPosition = {
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-    };
+    }
 
-    this.initialPosition = initialPosition;
-    this.currentPosition = { ...initialPosition };
-    this.angle = 0;
+    this.initialPosition = initialPosition
+    this.currentPosition = { ...initialPosition }
+    this.angle = 0
   }
 
   protected animate() {}
 
   public checkIfClicked(clickPosition: Position) {
-    return this.shape.checkIfClicked(this.currentPosition, clickPosition);
+    return this.shape.checkIfClicked(this.currentPosition, clickPosition)
   }
 
   public onClicked() {}
 
   public draw(ctx: CanvasRenderingContext2D) {
-    this.animate();
-    this.shape.draw(ctx, this.currentPosition, this.angle);
+    this.animate()
+    this.shape.draw(ctx, this.currentPosition, this.angle)
   }
 }
