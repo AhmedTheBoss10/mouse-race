@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <div id="screen-main-menu" class="screen-main-menu">
+      <img
+        src="/assets/images/game-logo.jpg"
+        alt="Game Logo"
+        class="screen-main-menu__logo"
+      />
+      <h1 class="screen-main-menu__title">Mouse Race Game</h1>
+      <button
+        id="start-game-button"
+        class="screen-main-menu__start-game-button"
+      >
+        Play
+      </button>
+      <ul id="leaderboard" class="screen-main-menu__leaderboard"></ul>
+    </div>
+
+    <div id="screen-game" class="screen-game">
+      <h1 class="screen-game__elapsed-time">
+        Elapsed Time: <span id="game-elapsed-time">0s</span>
+      </h1>
+      <canvas id="game-canvas" class="screen-game__canvas"></canvas>
+    </div>
+  </body>
+</html>
